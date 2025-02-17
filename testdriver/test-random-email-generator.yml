@@ -1,0 +1,27 @@
+version: 4.2.12
+session: 67b2ba5c54b9479422d54ade
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Random Email generator" link.
+    commands:
+      - command: hover-text
+        text: Random Email generator
+        description: link to generate a random email
+        action: click
+  - prompt: Assert that a random email is generated and displayed.
+    commands:
+      - command: hover-text
+        text: Close
+        description: close button on the advertisement overlay
+        action: click
+      - command: assert
+        expect: a random email is displayed on the page
+  - prompt: >-
+      Assert there are no errors after the email is generated.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: no error messages are displayed on the page
