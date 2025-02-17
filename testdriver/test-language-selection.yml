@@ -1,0 +1,13 @@
+version: 4.2.12
+session: 67b2ba60801960eacbc4044f
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the language dropdown menu.
+    commands:
+      - command: hover-text
+        text: English
+        description: language dropdown menu in the top right corner
+        action: click
