@@ -1,0 +1,17 @@
+version: 4.2.12
+session: 67b2ba61801960eacbc40452
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert the YOPmail logo is visible on the webpage.
+    commands:
+      - command: assert
+        expect: the YOPmail logo is visible on the webpage
+  - prompt: >-
+      Assert there are no immediate errors displayed.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: there are no immediate errors displayed on the webpage
